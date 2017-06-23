@@ -1,0 +1,32 @@
+{
+	"manifest_version" : 2,
+
+	"name" : "quero ser um dicionário",
+	"short_name" : "dicionário",
+	"description" : "Atalho para dicionários em língua portuguesa",
+	"version" : "1.0.0",
+
+	"browser_action" :
+	{
+		"default_icon" : "img/material-icons-search-48.png",
+		"default_popup" : "popup.html"
+	},
+
+	"icons": 
+	{ 
+		"16": "img/material-icons-search-16.png",
+        "48": "img/material-icons-search-48.png",
+        "128": "img/material-icons-search-128.png" 
+    },
+
+	"permissions" :
+	[
+		"activeTab",
+		"storage",
+		"https://ajax.googleapis.com/",
+		"https://www.priberam.pt/dlpo/*",
+		"http://michaelis.uol.com.br/*",
+		"http://www.linguee.pt/*",
+		"https://www.collinsdictionary.com/dictionary/"
+	]
+}

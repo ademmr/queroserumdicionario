@@ -1,0 +1,313 @@
+:root {
+    --mdc-theme-primary: #039be5;
+}
+
+body {
+	  width: 420px;
+    height: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.material-icons {
+    cursor: pointer;
+    color: #424242;
+}
+
+/* Header bar */
+header {
+  background-color: white!important;
+}
+
+div.mdc-toolbar__row{
+  height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+header .material-icons {
+    padding: 20px 8px 0px 0px;
+    margin-right: 10px;
+}
+
+a#historyBtn {
+    margin-right: -5px;
+    padding-top: 3px;
+    padding-left: 20px;
+}
+
+/* text input */
+.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline) {
+    height: 44px;
+}
+
+div.mdc-textfield.mdc-textfield--upgraded {
+    margin-top: 0px;
+}
+
+div.mdc-textfield.mdc-textfield--focused {
+    color: #424242;
+}
+
+input#searchInput {
+    margin-bottom: 5px;
+    border-bottom-width: 1px;
+    height: 13px;
+    width: 180px;
+    padding-bottom: 6px;
+}
+
+/*lang selection */
+/* Comment from MDC Devs: Hack to work around style-loader asynchronously loading styles. */
+/* Equivalent to using mdc-typography's subheading2, which is used in the sass file. */
+.mdc-select {
+  font-size: 1rem;
+  width: 50px;
+  height: 29px;
+}
+
+section.mdc-toolbar__section.mdc-toolbar__section--align-end {
+    width: 128px;
+    padding-top: 15px;
+    height: 65px!important;
+}
+
+div#js-select {
+    width: 50px!important;
+}
+
+/* results container */
+main {
+  margin-top: 90px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 24px;
+  display: none;
+}
+
+main a:not(.material-icons):not(.ignore) {
+  text-decoration: none;
+  color: #039be5;
+}
+
+/*div.mdc-card */
+div.fetcher-container {
+    margin-bottom: 24px;
+}
+
+/*a > div.mdc-card {*/
+a > div.fetcher-container {
+    margin-top: 24px;
+}
+
+/*.mdc-card */
+.fetcher-container {
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/*.mdc-card__primary*/
+.fetcher-title {
+    padding: 16px; 
+}
+
+/*.mdc-card__primary .mdc-card__title--large */
+.fetcher-title .fetcher-label {
+    padding-top: 8px; 
+}
+/*.mdc-card__primary:last-child */
+.fetcher-title:last-child {
+    padding-bottom: 24px; 
+}
+
+/*.mdc-card__supporting-text */
+.fetcher-content {
+    padding: 8px 16px;
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); 
+}
+    
+/* .mdc-card__primary + .mdc-card__supporting-text */
+.fetcher-title + .fetcher-content {
+    margin-top: -8px;
+    padding-top: 0; 
+}
+
+/*.mdc-card__supporting-text:last-child */
+.fetcher-content:last-child {
+    padding-bottom: 24px; 
+}
+  
+/*.mdc-card__title--large */
+.fetcher-label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 2rem;
+    margin: 0; 
+}
+  
+/*.mdc-card__subtitle */
+.fetcher-msg {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+    color: rgba(0, 0, 0, 0.87);
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    margin: -.063rem 0; 
+}
+
+.fetcher-content > .fetcher-msg {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+      
+/* Search History */
+#displayHistory .historyRow {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#displayHistory span.historyRow {
+    cursor: pointer;
+    word-break: break-all;
+    width: 245px;
+}
+
+#displayHistory div.historyRow {
+    align-items: center;
+    width: 70px;
+    margin-left: 95px;
+    background-color: #EEEEEE;
+    cursor: default;  
+}
+
+/* DICTIONARIES */
+
+/* Priberam */
+
+i {
+    font-style: normal;
+}
+
+/* Michaelis */
+ex, sx, sm, sv {
+    margin-top: 5px;
+}
+
+sx, sm, sv {
+    display: block;
+}
+
+ex, nav > h3, cg  {
+    font-weight: bold;
+}
+
+sx, sm, tt, sv {
+    margin-bottom: 5px;
+    color: #1483ff;
+}
+
+br + br { 
+    display: none; 
+}
+      
+acn, rn, ra, vrt, rmt {
+    color:#999;
+}
+
+nav > h3 {
+    margin-top: 10px;
+}
+ 
+cg {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #1483ff;
+    font-weight: normal;
+    display: inline-block;
+}
+
+h1, h3, h4, h5, h6 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: -.063rem 0;
+}
+
+a + .fetcher-container {
+    margin-top: 24px;
+}
+
+/* Linguee */
+
+h2.line.lemma_desc {
+    font-size: 1em;
+    margin-bottom: 0px;
+}
+
+h2.line.lemma_desc span.tag_wordtype, h2.line.lemma_desc span.tag_forms {
+    font-weight:normal;
+}
+
+h2.line.lemma_desc span.tag_forms {
+    font-size: 0.85em;
+}
+
+div.copyrightLineOuter {
+    margin-top: 16px;
+}
+
+div.example_lines.inexact > h3 {
+    margin-top: 10px;
+    color: #1483ff;
+    font-style: italic;
+} 
+
+span.tag_type, span.tag_wordtype {
+    color:#1483ff;
+    font-weight:normal;
+}
+
+div.translation.sortablemg.featured, div.line.group_line.translation_group_line {
+    margin-top: 8px;
+}
+
+span.notascommon {
+    color: #1483ff;
+}
+
+span.tag_s {
+    font-weight: bold;
+    /*display : block;*/
+}
+
+/* Collins */
+
+div.copyright, div.hom {
+    margin-top: 16px;
+}
+
+span.gramGrp > span.pos {
+    font-weight: normal;
+    color: #1483ff;
+}
+
+div.quote > span.pos, span.type-misc, span.blackbold {
+    color: #999;
+}
+
+span.type-phr {
+    font-weight: bold;
+}

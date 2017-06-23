@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>quero ser um dicionário</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/material-icons.css">
+        <link rel="stylesheet" type="text/css" href="css/material-components-web.min.css">
+        <link rel="stylesheet" type="text/css" href="css/popup.css">
+        <script type="application/javascript" src="js/material-components-web.min.js"></script>
+        <script type="application/javascript" charset="utf-8" src="js/fetcher.js"></script>
+        <script type="application/javascript" charset="utf-8" src="js/helper.js"></script>
+        <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+    </head>
+    <body class="mdc-typography">
+        <header class="mdc-toolbar mdc-toolbar--fixed">
+            <div class="mdc-toolbar__row">
+                <section id="toolbarForm" class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                    <a id="searchBtn" title="pesquisar" class="material-icons">search</a>
+                    <section>
+                        <div class="mdc-textfield">
+                          <input type="text" class="mdc-textfield__input" id="searchInput" name="searchInput" aria-controls="helpText" />
+                          <label for="searchInput" class="mdc-textfield__label">Pesquisa</label>
+                        </div>
+                        <p id="helpText" class="mdc-textfield-helptext"></p>
+                    </section>
+                    <a id="clearBtn" title="limpar" class="material-icons">clear</a>
+                    <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+                        <div id="js-select" class="mdc-select" role="listbox" tabindex="0">
+                            <span class="mdc-select__selected-text">Idioma</span>
+                            <div class="mdc-simple-menu mdc-select__menu">
+                                <ul class="mdc-list mdc-simple-menu__items">
+                                  <li class="mdc-list-item" role="option" id="pt" tabindex="0">por</li>
+                                  <li class="mdc-list-item" role="option" id="en" tabindex="0">ing</li>
+                                  <li class="mdc-list-item" role="option" id="es" tabindex="0">esp</li>
+                                  <li class="mdc-list-item" role="option" id="de" tabindex="0">ale</li>
+                                  <li class="mdc-list-item" role="option" id="it" tabindex="0">ita</li>
+                                  <li class="mdc-list-item" role="option" id="fr" tabindex="0">fra</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a id="historyBtn" title="histórico" class="material-icons">history</a>
+                    </section>
+                </section>
+            </div>
+        </header>
+        <main id="container"></main>
+    </body>
+</html>
