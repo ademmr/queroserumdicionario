@@ -23,21 +23,6 @@
         },
         en : 
         {
-            michaelis:
-            {
-                label: "Michaelis On-line",
-                uri: "http://michaelis.uol.com.br/busca?r=1&f=1&t=0&palavra=",
-                anchorsDomainRoot: "http://michaelis.uol.com.br",
-                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
-                elementsToRemove: { tag: ["e1", "ei", "es"] }
-            },
-            collins:
-            {
-                label: "Dicionário Collins",
-                uri: "https://www.collinsdictionary.com/dictionary/english-portuguese/",
-                successElements: [ [ "class", "definitions" ] ],
-                elementsToRemove: { class: [ "socialButtons" ] }
-            },
             linguee:
             {
                 label: "Linguee",
@@ -45,18 +30,18 @@
                 anchorsDomainRoot: "",
                 successElements: [ [ "id", "dictionary" ] ],
                 elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
-            }
-        },
-        es : 
-        {
+            },
             michaelis:
             {
                 label: "Michaelis On-line",
-                uri: "http://michaelis.uol.com.br/busca?r=3&f=2&t=0&palavra=",
+                uri: "http://michaelis.uol.com.br/busca?r=1&f=1&t=0&palavra=",
                 anchorsDomainRoot: "http://michaelis.uol.com.br",
                 successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
                 elementsToRemove: { tag: ["e1", "ei", "es"] }
-            },
+            }            
+        },
+        es : 
+        {
             linguee:
             {
                 label: "Linguee",
@@ -64,10 +49,27 @@
                 anchorsDomainRoot: "",
                 successElements: [ [ "id", "dictionary" ] ],
                 elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
+            },
+            michaelis:
+            {
+                label: "Michaelis On-line",
+                uri: "http://michaelis.uol.com.br/busca?r=3&f=2&t=0&palavra=",
+                anchorsDomainRoot: "http://michaelis.uol.com.br",
+                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
+                elementsToRemove: { tag: ["e1", "ei", "es"] }
             }
+            
         },
         de : 
         {
+            linguee:
+            {
+                label: "Linguee",
+                uri: "http://www.linguee.pt/german-portuguese/search?source=auto&query=",
+                anchorsDomainRoot: "",
+                successElements: [ [ "id", "dictionary" ] ],
+                elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
+            },
             michaelis:
             {
                 label: "Michaelis On-line",
@@ -76,25 +78,10 @@
                 successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
                 elementsToRemove: { tag: ["e1", "ei", "es"] }
             },
-            linguee:
-            {
-                label: "Linguee",
-                uri: "http://www.linguee.pt/german-portuguese/search?source=auto&query=",
-                anchorsDomainRoot: "",
-                successElements: [ [ "id", "dictionary" ] ],
-                elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
-            }
+            
         },
         it : 
         {
-            michaelis:
-            {
-                label: "Michaelis On-line",
-                uri: "http://michaelis.uol.com.br/busca?r=5&f=4&t=0&palavra=",
-                anchorsDomainRoot: "http://michaelis.uol.com.br",
-                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
-                elementsToRemove: { tag: ["e1", "ei", "es"] }
-            },
             linguee:
             {
                 label: "Linguee",
@@ -102,18 +89,18 @@
                 anchorsDomainRoot: "",
                 successElements: [ [ "id", "dictionary" ] ],
                 elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
+            },
+            michaelis:
+            {
+                label: "Michaelis On-line",
+                uri: "http://michaelis.uol.com.br/busca?r=5&f=4&t=0&palavra=",
+                anchorsDomainRoot: "http://michaelis.uol.com.br",
+                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
+                elementsToRemove: { tag: ["e1", "ei", "es"] }
             }
         },
         fr : 
         {
-            michaelis:
-            {
-                label: "Michaelis On-line",
-                uri: "http://michaelis.uol.com.br/busca?r=6&f=5&t=0&palavra=",
-                anchorsDomainRoot: "http://michaelis.uol.com.br",
-                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
-                elementsToRemove: { tag: ["e1", "ei", "es"] }
-            },
             linguee:
             {
                 label: "Linguee",
@@ -121,6 +108,14 @@
                 anchorsDomainRoot: "",
                 successElements: [ [ "id", "dictionary" ] ],
                 elementsToRemove: { class: [ "app_teaser", "sep", "dash", "openTriangle", "dict_headline_for_0", "lemma_desc", "inexact", "audio" ], id: [ "wikipedia-header", "wikipedia-body" ] }
+            },
+            michaelis:
+            {
+                label: "Michaelis On-line",
+                uri: "http://michaelis.uol.com.br/busca?r=6&f=5&t=0&palavra=",
+                anchorsDomainRoot: "http://michaelis.uol.com.br",
+                successElements: [ [ "id", "content" ], [ "id", "secondary" ] ],
+                elementsToRemove: { tag: ["e1", "ei", "es"] }
             }
         }
     };
@@ -151,6 +146,11 @@
         var lang            = "";
         var input           = "";
         var searched        = false;
+        
+        /* There will only be a need to resize the window, if extension is opened from context menu. If so, resizeWindow() will be re-assigned
+           (cleaner than placing conditions throughout the code)
+        */
+        var resizeWindow    = function(){};
 
         var search          = function()
         {
@@ -160,7 +160,8 @@
                 let valid = helper.validation( searchInput.value, lang );
                 if( valid )
                 {
-                    helper.showContainer( containerDiv );     
+                    helper.showContainer( containerDiv );
+                    resizeWindow();      
                     definition.getMultiple( dictionaries[ lang ], input );
                 }
 
@@ -172,34 +173,88 @@
         
         chrome.tabs.query( { currentWindow: true, active: true }, function (tabs) 
         {
-            /* If language of current page has, at least, one correspondence in the dictionaries object, set it as the value of the languages select box */
-            chrome.tabs.detectLanguage( tabs[0].id, function( language )
-            {
-                if( typeof language != "undefined" && language != "" && dictionaries[ language ] != undefined )
-                {
-                    lang = language;
-                    langsSB.selectedIndex = helper.getIndex( langsSB.options, language );
-                }
-            });
+            searchInput.focus();  
             
-            /* Grab text selection from current page and place it in input field.
-               Prevent script execution if current page is Chrome's new tab page or extensions gallery */
-            if( tabs[0].url.search( 'chrome://|chrome.google.com/webstore' ) < 0 )
+            /* From browser action */
+            if( tabs[0].url !== undefined )
             {
-                chrome.tabs.executeScript( 
+            
+                /* If language of current page has, at least, one correspondence in the dictionaries object, set it as the value of the languages select box */
+                chrome.tabs.detectLanguage( tabs[0].id, function( language )
                 {
-                    code: 'window.getSelection().toString();'
-                }, function(selection) 
-                {
-                    if( typeof selection != "undefined" && selection[ 0 ] != "" )
+                    if( typeof language != "undefined" && language != "" && dictionaries[ language ] != undefined )
                     {
-                        searchInput.value = selection[ 0 ].trim();
-                        searchInput.focus();  
+                        lang = language;
+                        langsSB.selectedIndex = helper.getIndex( langsSB.options, language );
+                    }
+                });
+                
+                /* Grab text selection from current page and place it in input field.
+                   Prevent script execution if current page is Chrome's new tab page or extensions gallery */
+                if( tabs[0].url.search( 'chrome://|chrome.google.com/webstore' ) < 0 )
+                {
+                    chrome.tabs.executeScript( 
+                    {
+                        code: 'window.getSelection().toString();'
+                    }, function(selection) 
+                    {
+                        if( typeof selection != "undefined" && selection[ 0 ] != "" )
+                        {
+                            searchInput.value = selection[ 0 ].trim();
+                            if( lang != "" )
+                            {
+                                search();
+                            }
+                        }
+                    });
+                }
+            }
+            /* From context menu */
+            else
+            {
+                /* Communicate with Event Page script to get data (lang, text selection, window size) from */
+                chrome.runtime.sendMessage({ fromMainScript: 1 }, function( response )
+                {
+                    if( response.lang !== undefined && dictionaries[ response.lang ] != undefined )
+                    {
+                        lang = response.lang;
+                        langsSB.selectedIndex = helper.getIndex( langsSB.options, response.lang );
+                    }
+                   
+                    if( response.selection !== undefined )
+                    {
+                        searchInput.value = response.selection.trim();
                         if( lang != "" )
                         {
+                            window.resizeTo( response.resultsWidth, response.resultsHeight ); 
                             search();
                         }
                     }
+
+                    /* Close extension if window loses focus, to emulate regular pop up behavior */
+                    window.onblur = function() 
+                    {
+                        chrome.windows.remove( tabs[ 0 ][ "windowId" ] );
+                    };
+
+                    /* Resize window to the same measures as the popup (there are some differences between OS), when content is shown or hidden */
+                    resizeWindow = function()
+                    {
+                       if( containerDiv.style.display == 'block' )
+                       {
+                            window.resizeTo( response.resultsWidth, response.resultsHeight );  
+                       }
+                       else
+                       {
+                            window.resizeTo( response.width, response.height );  
+                       }
+                    }
+
+                    /* Disallow user resize of the extension window */
+                    window.onresize = function( event ) 
+                    {
+                        resizeWindow();
+                    };
                 });
             }
         });
@@ -229,6 +284,7 @@
             definition.stop();
             searchInput.value = "";
             helper.hideContainer( containerDiv );
+            resizeWindow();
         });
         
         /* Update lang variable if language is changed by user */
@@ -278,6 +334,7 @@
         {
             definition.stop();
             helper.displayHistory( containerDiv );
+            resizeWindow();
         });
     });
 }());
