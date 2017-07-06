@@ -178,7 +178,6 @@
             /* From browser action */
             if( tabs[0].url !== undefined )
             {
-            
                 /* If language of current page has, at least, one correspondence in the dictionaries object, set it as the value of the languages select box */
                 chrome.tabs.detectLanguage( tabs[0].id, function( language )
                 {
@@ -212,21 +211,21 @@
             /* From context menu */
             else
             {
-                /* Communicate with Event Page script to get data (lang, text selection, window size) from */
-                chrome.runtime.sendMessage({ fromMainScript: 1 }, function( response )
+                /* Get current page's data from event page */
+                chrome.runtime.getBackgroundPage( function ( bgPage )
                 {
-                    if( response.lang !== undefined && dictionaries[ response.lang ] != undefined )
+                    if( bgPage.extensionData.lang !== undefined && dictionaries[ bgPage.extensionData.lang ] != undefined )
                     {
-                        lang = response.lang;
-                        langsSB.selectedIndex = helper.getIndex( langsSB.options, response.lang );
+                        lang = bgPage.extensionData.lang;
+                        langsSB.selectedIndex = helper.getIndex( langsSB.options, bgPage.extensionData.lang );
                     }
                    
-                    if( response.selection !== undefined )
+                    if( bgPage.extensionData.selection !== undefined )
                     {
-                        searchInput.value = response.selection.trim();
+                        searchInput.value = bgPage.extensionData.selection.trim();
                         if( lang != "" )
                         {
-                            window.resizeTo( response.resultsWidth, response.resultsHeight ); 
+                            window.resizeTo( bgPage.extensionData.resultsWidth, bgPage.extensionData.resultsHeight ); 
                             search();
                         }
                     }
@@ -234,7 +233,7 @@
                     /* Close extension if window loses focus, to emulate regular pop up behavior */
                     window.onblur = function() 
                     {
-                        chrome.windows.remove( tabs[ 0 ][ "windowId" ] );
+                       chrome.windows.remove( tabs[ 0 ][ "windowId" ] );
                     };
 
                     /* Resize window to the same measures as the popup (there are some differences between OS), when content is shown or hidden */
@@ -242,11 +241,11 @@
                     {
                        if( containerDiv.style.display == 'block' )
                        {
-                            window.resizeTo( response.resultsWidth, response.resultsHeight );  
+                            window.resizeTo( bgPage.extensionData.resultsWidth, bgPage.extensionData.resultsHeight );  
                        }
                        else
                        {
-                            window.resizeTo( response.width, response.height );  
+                            window.resizeTo( bgPage.extensionData.width, bgPage.extensionData.height );  
                        }
                     }
 

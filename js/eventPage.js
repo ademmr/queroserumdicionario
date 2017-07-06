@@ -15,6 +15,7 @@ var extensionData = {};
 /* Create window with similar measurements and position of browser action pop up  */
 function openPopUp( info, tab ) 
 {
+    extensionData = {};
     chrome.tabs.detectLanguage( tab.id, function( language )
     {
         chrome.windows.get( tab.windowId, function( windowOfTab )
@@ -70,9 +71,9 @@ function openPopUp( info, tab )
               
                 extensionData = { lang: language, selection: info.selectionText, width: width, height : height, resultsWidth: resultsWidth, resultsHeight: resultsHeight };
                             
-              chrome.windows.create({'url': 'popup.html', 'state' : 'normal', 'type': 'popup', 'height': height, 'width': width, 'top' : top, 'left': left, }, function( newWindow ) 
-              {
-              });
+                chrome.windows.create({'url': 'popup.html', 'state' : 'normal', 'type': 'popup', 'height': height, 'width': width, 'top' : top, 'left': left, }, function( newWindow ) 
+                {
+                });
           });
       });
   });
@@ -107,7 +108,6 @@ function checkFullScreenMacOs()
         windowState = currentWindow.state;
     });
 }   
-      
 chrome.runtime.getPlatformInfo( function( platformInfo ) 
 {
     if( platformInfo.os == "mac" )
@@ -115,15 +115,9 @@ chrome.runtime.getPlatformInfo( function( platformInfo )
         checkFullScreenMacOs();
     }
 });
-
-/* Receive from or pass data to Page.js (content script) and Main.js (pop up script) */
 chrome.runtime.onMessage.addListener( function( request, sender, sendResponse ) 
 {
-    if (request.fromMainScript == 1 )
-    {
-        sendResponse( extensionData );  
-    }
-    else if ( request.resizedMacOS == 1 )
+    if ( request.resizedMacOS == 1 )
     {
         checkFullScreenMacOs();
     }
