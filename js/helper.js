@@ -173,7 +173,7 @@
                 {
                     results.className   = "mdc-layout-grid";
                     historyContent      = '<div class=" mdc-layout-grid__cell"><a id="clearHistory" title="limpar histórico" class="material-icons">delete</a></div>';
-                    var langs           = { pt: "por", es: "esp", en: "ing", de: "ale", it: "ita", fr: "fra" };
+                    var langs           = { pt: "por", es: "esp", en: "ing", de: "ale", fr: "fra" };
                     for( var i = 0; i < history[ "langs" ].length; i++ )
                     {
                          historyContent += '<span class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-ripple-surface mdc-ripple-surface--primary mdc-theme--primary historyRow mdc-elevation--z2" tabindex="0" data-lang="' + history[ "langs" ][ i ] + '" >' + history[ "words" ][ i ] 

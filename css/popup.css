@@ -204,7 +204,7 @@ i {
 
 /* Michaelis */
 ex, sx, sm, sv {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 sx, sm, sv {
@@ -233,7 +233,7 @@ nav > h3 {
 }
  
 cg {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 5px;
     color: #1483ff;
     font-weight: normal;
@@ -246,9 +246,10 @@ h1, h3, h4, h5, h6 {
     margin: -.063rem 0;
 }
 
-a + .fetcher-container {
-    margin-top: 24px;
+a + .fetcher-container, nav.hidden-print.affix {
+    margin-top: 25px;
 }
+
 
 /* Linguee */
 
@@ -266,7 +267,7 @@ h2.line.lemma_desc span.tag_forms {
 }
 
 div.copyrightLineOuter {
-    margin-top: 16px;
+    margin-top: 15px;
 }
 
 div.example_lines.inexact > h3 {
@@ -281,7 +282,8 @@ span.tag_type, span.tag_wordtype {
 }
 
 div.translation.sortablemg.featured, div.line.group_line.translation_group_line {
-    margin-top: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 span.notascommon {
@@ -293,10 +295,14 @@ span.tag_s {
     /*display : block;*/
 }
 
+div.example.line {
+    padding-top: 5px;
+}
+
 /* Collins */
 
 div.copyright, div.hom {
-    margin-top: 16px;
+    margin-top: 15px;
 }
 
 span.gramGrp > span.pos {

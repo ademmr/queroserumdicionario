@@ -80,6 +80,7 @@
             },
             
         },
+        /* Linguee italian is not working properly
         it : 
         {
             linguee:
@@ -99,6 +100,7 @@
                 elementsToRemove: { tag: ["e1", "ei", "es"] }
             }
         },
+        */
         fr : 
         {
             linguee:
