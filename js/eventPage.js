@@ -16,67 +16,86 @@ var extensionData = {};
 function openPopUp( info, tab ) 
 {
     extensionData = {};
-    chrome.tabs.detectLanguage( tab.id, function( language )
+    if( tab.id < 0 )
     {
-        chrome.windows.get( tab.windowId, function( windowOfTab )
+        createWindow( info, "", { top: 0, left: 0, width: tab.width } );
+    }
+    else
+    {
+        chrome.tabs.detectLanguage( tab.id, function( language )
         {
-            /* Each OS has small differences in the pop up's width and height */
-            chrome.runtime.getPlatformInfo( function( platformInfo ) 
-            { 
-                var height, resultsHeight, width, resultsWidth, fromTopToOmnibox;
-                switch( platformInfo.os )
+            chrome.windows.get( tab.windowId, function( windowOfTab )
+            {
+                createWindow( info, language, windowOfTab );
+            });
+        });
+    }
+}
+
+function createWindow( info, language, windowOfTab )
+{
+    chrome.windows.getCurrent( function( currentWindow )
+        {
+        console.log("currentWindow",currentWindow);
+            
+        });
+
+
+    /* Each OS has small differences in the pop up's width and height */
+    chrome.runtime.getPlatformInfo( function( platformInfo ) 
+    { 
+        var height, resultsHeight, width, resultsWidth, fromTopToOmnibox;
+        switch( platformInfo.os )
+        {
+            case "mac":
+                if( windowOfTab.state == "fullscreen" )
                 {
-                    case "mac":
-                        if( windowOfTab.state == "fullscreen" )
-                        {
-                            /* Just in case context menu isn't disabled in time */
-                            alert( "Em modo fullscreen, use o atalho de teclado ou clique no ícone da extensão." );
-                            return;
-                        }
-
-                        height              = 112;
-                        resultsHeight       = 622;
-                        width               = 436;
-                        resultsWidth        = 436;
-                        fromTopToOmnibox    = 70;
-                        break;
-
-                    case "linux":
-                        height              = 90;
-                        resultsHeight       = 600;
-                        width               = 436;
-                        resultsWidth        = 451;
-                        fromTopToOmnibox    = 70;
-                        break;
-
-                    //"win"
-                    //case "cros": Chrome OS not tested, so it will have same values as Windows, for now.
-                    default:
-                        height              = 129;
-                        resultsHeight       = 639;
-                        width               = 452;
-                        resultsWidth        = 469;
-                        fromTopToOmnibox    = 80;
-                        break;
+                    /* Just in case context menu isn't disabled in time */
+                    alert( "Em modo fullscreen, use o atalho de teclado ou clique no ícone da extensão." );
+                    return;
                 }
-              
-                //Create window at browser's top right corner, like the browser action pop up
-                var top = windowOfTab.top + fromTopToOmnibox;
-                var left = windowOfTab.left + windowOfTab.width - resultsWidth - 15;
-                //Multiple screens
-                if( windowOfTab.left < 0 )
-                {
-                    left   = windowOfTab.left + windowOfTab.width - resultsWidth - 15;
-                }
-              
-                extensionData = { lang: language, selection: info.selectionText, width: width, height : height, resultsWidth: resultsWidth, resultsHeight: resultsHeight };
-                            
-                chrome.windows.create({'url': 'popup.html', 'state' : 'normal', 'type': 'popup', 'height': height, 'width': width, 'top' : top, 'left': left, }, function( newWindow ) 
-                {
-                });
-          });
-      });
-  });
+
+                height              = 112;
+                resultsHeight       = 622;
+                width               = 436;
+                resultsWidth        = 436;
+                fromTopToOmnibox    = 70;
+                break;
+
+            case "linux":
+                height              = 90;
+                resultsHeight       = 600;
+                width               = 436;
+                resultsWidth        = 451;
+                fromTopToOmnibox    = 70;
+                break;
+
+            //"win"
+            //case "cros": Chrome OS not tested, so it will have same values as Windows, for now.
+            default:
+                height              = 129;
+                resultsHeight       = 639;
+                width               = 452;
+                resultsWidth        = 469;
+                fromTopToOmnibox    = 80;
+                break;
+        }
+      
+        //Create window at browser's top right corner, like the browser action pop up
+        var top = windowOfTab.top + fromTopToOmnibox;
+        var left = windowOfTab.left + windowOfTab.width - resultsWidth - 15;
+        //Multiple screens
+        if( windowOfTab.left < 0 )
+        {
+            left   = windowOfTab.left + windowOfTab.width - resultsWidth - 15;
+        }
+      
+        extensionData = { lang: language, selection: info.selectionText, width: width, height : height, resultsWidth: resultsWidth, resultsHeight: resultsHeight };
+                    
+        chrome.windows.create({'url': 'popup.html', 'state' : 'normal', 'type': 'popup', 'height': height, 'width': width, 'top' : top, 'left': left, }, function( newWindow ) 
+        {
+        });
+    });
 }
 
 /* Create context menus for 2 contexts (page without and with a text selection) and add action */
