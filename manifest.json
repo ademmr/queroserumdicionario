@@ -4,7 +4,7 @@
 	"name" : "quero ser um dicionário",
 	"short_name" : "dicionário",
 	"description" : "Atalho para dicionários em língua portuguesa",
-	"version" : "1.2.1",
+	"version" : "1.2.2",
 
 	"browser_action" :
 	{
