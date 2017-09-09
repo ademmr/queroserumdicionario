@@ -16,10 +16,13 @@ var extensionData = {};
 function openPopUp( info, tab ) 
 {
     extensionData = {};
+    /*Chrome PDF reader case
+    Since tab and window ids have the value of -1, it is not possible to detect language or window coordinates. */
     if( tab.id < 0 )
     {
         createWindow( info, "", { top: 0, left: 0, width: tab.width } );
     }
+    /* Regular cases */
     else
     {
         chrome.tabs.detectLanguage( tab.id, function( language )
@@ -34,13 +37,6 @@ function openPopUp( info, tab )
 
 function createWindow( info, language, windowOfTab )
 {
-    chrome.windows.getCurrent( function( currentWindow )
-        {
-        console.log("currentWindow",currentWindow);
-            
-        });
-
-
     /* Each OS has small differences in the pop up's width and height */
     chrome.runtime.getPlatformInfo( function( platformInfo ) 
     { 
